@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Portfolio Gaby</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/9e5fc47a4e.js" crossorigin="anonymous"></script>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <img src="./assets/Gm.jpeg" class="logo" alt="logo">
+            <ul>
+                <li><a href="#second">À propos de moi</a></li>
+                <li><a href="#">Mes compétences</a></li>
+                <li><a href="#">Mes Projets</a></li>
+            </ul>
+        </nav>
+
+        <section class="first">
+            <h1 id="text1">Gabrielle</h1>
+            <h1 id="text2">Metezeau</h1>
+            <div>
+                <img src="./assets/gabystars.svg" id="etoile1" alt="étoiles" height="40px" style="position: relative;margin:15px;">
+
+                <h3 id="text3" style="position: relative;">Communication</h3>
+
+                <img src="./assets/gabystars.svg" id="etoile2" alt="étoiles" height="40px" style="position: relative;margin:15px;">
+            </div>
+
+            <a id="arrow_scroll" href="#second"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <section class="second" id="second">
+            c'est la coquine zebi
+            <div class="photo">
+                
+            </div>
+
+        </section>
+
+
+
+        <script>
+            let text1 = document.getElementById('text1');
+            let text2 = document.getElementById('text2');
+            let text3 = document.getElementById('text3');
+            let etoile1 = document.getElementById('etoile1');
+            let etoile2 = document.getElementById('etoile2');
+            let arrow_scroll = document.getElementById('arrow_scroll');
+            let section2 = document.getElementById('second')
+
+            
+            window.addEventListener('scroll',function(){
+                let value = window.scrollY;
+                console.log(value);
+                text1.style.marginRight = value * 1 + 'px';
+                text2.style.marginRight = value * -1 + 'px';
+                text3.style.right = value * 0.05 + 'px';
+                etoile1.style.right = value * 0.8 + 'px';
+                etoile2.style.right = value * -0.8 + 'px';
+                arrow_scroll.style.opacity = 800 - value +'%';
+                if(value>800) {
+                    change_color()
+                }
+                if(value<800) {
+                    change_color_reverse()
+                }
+            })
+
+            function change_color(){
+                section2.style.backgroundColor = "black";
+            }
+            function change_color_reverse(){
+                section2.style.backgroundColor = "white";
+            }
+
+        </script>
+        
+    
+    </body>
+</html>
